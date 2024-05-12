@@ -17,7 +17,6 @@ namespace WeatherApp.Pages
 
         public async void GetWeather_Click(object sender, EventArgs e)
         {
-            //.
             await Navigation.PushAsync(new ShowWeather());
         }
     }
