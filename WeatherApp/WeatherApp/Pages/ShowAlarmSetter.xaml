@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherApp.Pages.ShowAlarmSetter">
+    <!--<StackLayout>
+            <Label Text="Настройка будильника" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand" />
+        <DatePicker x:Name="setDate" Format="D"></DatePicker>
+        <TimePicker x:Name="setTime"></TimePicker>
+    </StackLayout>-->
+
+    <TableView x:Name="tableView">
+        <TableView.Root>
+            <TableRoot>
+                <TableSection Title="Выберите дату звонка">
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <DatePicker x:Name="datePicker" Format="D"></DatePicker>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+
+                <TableSection Title="Выберите время звонка">
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <TimePicker x:Name="timePicker"></TimePicker>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+
+                <TableSection Title ="Установите громкость">
+                    <ViewCell>
+                        <StackLayout  Orientation="Horizontal">
+                            <Label x:Name="sliderText" Text="50" VerticalOptions="Center" Margin="10,0,10,0" />
+                            <Slider x:Name="slider" Minimum="0" Maximum="100" Value="50" MinimumTrackColor="Blue" MaximumTrackColor="Gray" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+
+                <TableSection>
+                    <SwitchCell x:Name="electroSwitch" Text="Повторять каждый день" OnColor="RoyalBlue"  />
+                </TableSection>
+
+                <TableSection>
+                    <ViewCell>
+                        <Button Text="Сохранить" x:Name="Save" Margin="30,0,30,0" CornerRadius="15" Clicked="saveButton_Clicked"></Button>
+                    </ViewCell>
+                </TableSection>
+                
+            </TableRoot>
+        </TableView.Root>
+    </TableView>
+</ContentPage>

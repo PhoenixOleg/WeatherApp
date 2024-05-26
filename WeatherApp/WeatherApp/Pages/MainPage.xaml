@@ -6,7 +6,8 @@
 
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="Welcome to WeatherApp!" HorizontalTextAlignment="Center" TextColor="Gray" FontSize="Small"/>
-        <Button Text="GET WEATHER" x:Name="getButton" Clicked="GetWeather_Click" />
+        <Button Text="Узнать погоду" x:Name="getWhethee" Clicked="GetWeather_Click" />
+        <Button Text="Установить будильник" x:Name="setAlarm" Clicked="setAlarm_Clicked" />
     </StackLayout>
 
 </ContentPage>
