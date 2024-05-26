@@ -2,19 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherApp.Pages.ShowAlarmSetter">
-    <!--<StackLayout>
-            <Label Text="Настройка будильника" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand" />
-        <DatePicker x:Name="setDate" Format="D"></DatePicker>
-        <TimePicker x:Name="setTime"></TimePicker>
-    </StackLayout>-->
 
-    <TableView x:Name="tableView">
+    <TableView x:Name="tableView" HasUnevenRows="true">
         <TableView.Root>
             <TableRoot>
                 <TableSection Title="Выберите дату звонка">
                     <ViewCell>
                         <StackLayout Orientation="Horizontal">
-                            <DatePicker x:Name="datePicker" Format="D"></DatePicker>
+                            <DatePicker x:Name="datePicker" Format="dd MMMM yyyy" Style="{StaticResource ValidInputStyleDate}"></DatePicker>
                         </StackLayout>
                     </ViewCell>
                 </TableSection>
@@ -22,7 +17,7 @@
                 <TableSection Title="Выберите время звонка">
                     <ViewCell>
                         <StackLayout Orientation="Horizontal">
-                            <TimePicker x:Name="timePicker"></TimePicker>
+                            <TimePicker x:Name="timePicker" Format="HH:mm" Style="{StaticResource Key=ValidInputStyleTime}"></TimePicker>
                         </StackLayout>
                     </ViewCell>
                 </TableSection>
@@ -42,10 +37,13 @@
 
                 <TableSection>
                     <ViewCell>
-                        <Button Text="Сохранить" x:Name="Save" Margin="30,0,30,0" CornerRadius="15" Clicked="saveButton_Clicked"></Button>
+                        <StackLayout Orientation="Vertical">
+                            <Button Text="Сохранить" x:Name="Save" Margin="30,5" CornerRadius="15" Clicked="saveButton_Clicked" HorizontalOptions="FillAndExpand" />
+                            <Label x:Name="result" Text="" HorizontalOptions="CenterAndExpand"/>
+                        </StackLayout>
                     </ViewCell>
                 </TableSection>
-                
+
             </TableRoot>
         </TableView.Root>
     </TableView>
